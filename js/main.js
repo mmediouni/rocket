@@ -89,7 +89,7 @@ function onClickResetlButton() {
     setTimeout(function(){ 
         resetButton.setAttribute("id", "reset-button");    ; 
     }, 300);
-    
+    window.location.reload();
 }
 
 function addStar() {
