@@ -14,7 +14,7 @@ const GIF_EXT = '.gif' ;
 var theMoonNume ;
 let timer ;
 var n = 10;
-const milliSECONDE = 1000;
+const milliSECONDE = 500;
 let fly;
 /***********************************************************************************/
 /* ********************************** FONCTIONS ************************************/
