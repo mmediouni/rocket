@@ -89,7 +89,16 @@ body {
     left: 50%;
     transform: translate(calc(-50% - 150px));
 }
-
+#launching-fire {
+    
+    position: absolute;
+    bottom: -70px;
+    left: 61%;
+    transform: translate(calc(-50% - 150px));
+}
+.launching-fire-display{
+    display: none;
+}
 #rocket {
     position: absolute;
     bottom:-207px;
