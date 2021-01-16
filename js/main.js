@@ -6,15 +6,17 @@
 const billbord = document.querySelector('#billboard span');
 const rocket = document.querySelector('#rocket');
 const moon = document.querySelector('#moon');
+const explosion = document.querySelector('#launching-fire');
 const firingButton = document.querySelector('#firing-button');
 const cancelButton = document.querySelector('#cancel-button');
 const resetButton = document.querySelector('#reset-button');
+const bomb = document.getElementById('myAudio');
 const IMAGE_PATH = 'images/moon' ;
 const GIF_EXT = '.gif' ;
 var theMoonNume ;
 let timer ;
 var n = 10;
-const milliSECONDE = 500;
+const milliSECONDE = 150;
 let fly;
 /***********************************************************************************/
 /* ********************************** FONCTIONS ************************************/
@@ -30,6 +32,11 @@ function onClickFiringButton() {
     fly = window.setTimeout(function(){
         rocket.src='images/rocket3.gif';
         rocket.classList= 'tookOff';
+        explosion.classList.remove('launching-fire-display')
+        function playAudio() { 
+            bomb.play(); 
+          } 
+          playAudio();
         theMoonNume = getRandomInteger(1,5)
         moon.src=IMAGE_PATH+theMoonNume+GIF_EXT;
         moon.classList= 'tookOff';
