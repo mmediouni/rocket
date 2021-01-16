@@ -12,11 +12,14 @@ const cancelButton = document.querySelector('#cancel-button');
 const resetButton = document.querySelector('#reset-button');
 const bomb = document.getElementById('myAudio');
 const IMAGE_PATH = 'images/moon' ;
+const IMAGE_fireWorksPATH = 'images/fireworks' ;
+
 const GIF_EXT = '.gif' ;
-var theMoonNume ;
+var theMoonNume;
+var thefireWorksNum ;
 let timer ;
 var n = 10;
-const milliSECONDE = 150;
+const milliSECONDE = 100;
 let fly;
 /***********************************************************************************/
 /* ********************************** FONCTIONS ************************************/
@@ -33,19 +36,22 @@ function onClickFiringButton() {
         rocket.src='images/rocket3.gif';
         rocket.classList= 'tookOff';
         explosion.classList.remove('launching-fire-display')
-        function playAudio() { 
-            bomb.play(); 
-          } 
           playAudio();
         theMoonNume = getRandomInteger(1,5)
         moon.src=IMAGE_PATH+theMoonNume+GIF_EXT;
         moon.classList= 'tookOff';
+
+        for (let i = 0; i < 20; i++) {
+            fireworks();
+        }
+
 
 },n * milliSECONDE);
     
 // 4 - Commencer le compte a rebours
     countdown()
     timer = window.setInterval(countdown,milliSECONDE);
+    
 }
 
 function countdown() {
@@ -61,6 +67,7 @@ function countdown() {
         billbord.textContent = n; 
         n--;
     }
+    
 }
 
 function onClickCancelButton() {
@@ -83,8 +90,6 @@ function onClickResetlButton() {
         resetButton.setAttribute("id", "reset-button");    ; 
     }, 300);
     
-
-
 }
 
 function addStar() {
@@ -94,13 +99,8 @@ function addStar() {
     star.classList.add( taillesDesEtoiles[getRandomInteger(0,taillesDesEtoiles.length-1)]);
     console.log(taillesDesEtoiles);
     // Personaliser l"etoile
-   
-       
-
     star.style.left = getRandomInteger(1,100) + '%' ;
     star.style.top = getRandomInteger(1,100) + '%' ;
-
-
     document.querySelector('body').appendChild(star);
 }
 
@@ -108,6 +108,27 @@ function addStar() {
 for (let i = 0; i < 200; i++) {
     addStar();  
 }
+
+function playAudio() { 
+    bomb.play(); 
+  } 
+
+function fireworks() {
+
+    const firework = document.createElement('img');
+    firework.classList.add('firework');
+    thefireWorksNum = getRandomInteger(1,3)
+    firework.setAttribute("src", IMAGE_fireWorksPATH+thefireWorksNum+GIF_EXT)
+    var emplacementFireworks = ['fireworksDimension1','fireworksDimension2','fireworksDimension3'];
+    firework.classList.add( emplacementFireworks[getRandomInteger(0,emplacementFireworks.length-1)]);
+    firework.style.left = getRandomInteger(20,80) + '%' ;
+    firework.style.top = getRandomInteger(1,50) + '%' ;
+    document.querySelector('body').appendChild(firework);
+
+
+}
+
+
 /************************************************************************************/
 /* ******************************** CODE PRINCIPAL **********************************/
 /************************************************************************************/
