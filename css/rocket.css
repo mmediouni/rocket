@@ -1,5 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+:root {
+    --bg_main: #000033;
+    --text_light: #fff;
+    --text_med: #53627c;
+    --text_dark: #1e2432;
+    --red: #ff1e42;
+    --darkred: #c3112d;
+    --orange: #ff8c00;
+  }
+
+
 html {
-    background-color: #000033;
+    background-color: var(--bg_main) ;
 }
 
 body {
@@ -115,7 +127,7 @@ body {
 #rocket.tookOff {
     bottom: 2000px;
     left: 75%;
-    transform: rotate(30deg) scale(0.5);
+    transform: rotate(30deg) scale(0.3);
 }
 
 
@@ -176,3 +188,26 @@ body {
     color: yellowgreen;
     font-weight: 900;
   }
+
+
+/*============== rain START =================  */
+
+  .drop {
+    position: fixed;
+    top: -1vh;
+    font-size: 1rem;
+    transform: translateY(3);
+    animation: fall 1s linear forwards;
+    color: rgba(255, 255, 255, 0.911);
+    z-index: -8;
+    
+font-family: "Poppins", sans-serif;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(105vh);
+    }
+}
+
+/*============== rain End =================  */
