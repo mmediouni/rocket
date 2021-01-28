@@ -105,7 +105,7 @@ function addStar() {
 }
 
 
-for (let i = 0; i < 200; i++) {
+for (let i = 0; i < 150; i++) {
     addStar();  
 }
 
@@ -127,6 +127,26 @@ function fireworks() {
 
 
 }
+
+
+function createRain() {
+    const drops = document.createElement("div");
+    drops.classList.add("drop");
+
+    drops.style.left = Math.random() * 100 + "vw";
+    drops.style.animationDuration = Math.random() * 2 + 3 + "s";
+
+    drops.innerText = "❅";
+
+    document.body.appendChild(drops);
+
+    setTimeout(() => {
+        drops.remove();
+    }, 3000);
+}
+
+setInterval(createRain, 44);
+
 
 
 /************************************************************************************/
